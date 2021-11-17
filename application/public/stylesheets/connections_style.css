@@ -1,0 +1,111 @@
+#filters a {
+    font-weight: bold;
+    color: #e5eaecec;
+    background-color:  #276792;
+    margin-right: .15vw;
+    margin-left: .15vw;
+    padding: .2vw;
+    border: #276792 0.15vw inset;
+    border-radius: .5vw;
+    text-decoration: none;
+}
+
+#filters {
+    background-color: #e5eaecec;
+    text-align: left;
+    color: #e5eaecef;
+    padding: .5vw;
+    margin-left: .5vw;
+    margin-right: .5vw;
+    margin-bottom: .5vw;
+    border: #276792 0.2vw outset;
+    border-radius: .75vw;
+    
+}
+
+#filters a:hover {
+    cursor: pointer;
+}
+
+#filters a:active {
+    border: #e5eaecec 0.15vw inset
+}
+
+.header {
+    margin-bottom: 0.2vh;
+    text-align: center;
+    background-color: #276792;
+    padding: 1vh 0 1vh 0;
+    color: #e5eaecec;
+    border: #276792 0.25vh inset;
+    border-radius: 1vh;
+}
+
+
+#studentResults {
+    background-color: #e5ece7ec;
+    border-radius: .3vw;
+    border: #276792 0.25vh inset;
+    margin: 1vh .5vh;
+    padding: .2vw;
+}
+
+#teacherResults {
+    background-color: #e5eaecec;
+    border-radius: .3vw;
+    border: #276792 0.25vh inset;
+    margin: 1vh .5vh;
+    padding: .2vw;
+}
+
+#employerResults {
+    background-color: #e5eaecec;
+    border-radius: .3vw;
+    border: #276792 0.25vh inset;
+    margin: 1vh .5vh;
+    padding: .2vw;
+}
+
+.connectionResults {
+	max-height: 80vh;
+    overflow-y: auto;
+}
+
+.individual-connection-card, .org-connection-card {
+  	display: flex;
+  	background-color: white;
+  	border-radius: .3vw;
+  	border: #276792 0.25vh inset;
+  	margin: 1vh .5vh;
+  	padding: .2vw;
+}
+
+.individual-connection-card img, .org-connection-card img {
+	background-color: #e5eaecec;
+    width: 12vw;
+    max-height: 32vh;
+    min-height: 16vh;
+    border: white ridge .25vw;
+    border-radius: .4vw;
+    padding: .5vw;
+}
+
+.individual-connection-card, .org-connection-card {
+	align-items: center;
+}
+
+.individual-connection-card button, .org-connection-card button {
+	margin-left: auto;
+  	background-color: #276792;
+  	color: #e5eaecec;
+  	border: #276792 0.2vw outset;
+  	max-width: max-content;
+	max-height: 5vh;
+  	padding: 0.2vw;
+  	border-radius: .7vw;
+  	font-weight: bold;
+}
+
+.individual-connection-card button:hover, .individual-connection-card button:hover {
+  	cursor: pointer;
+}

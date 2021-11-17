@@ -1,0 +1,80 @@
+ {{!-- Test this. May need new helper to handle this situation. --}}
+{{!-- <div class = "home-listings-card">
+    <div>
+    {{#if this.logo}}
+        <img src = "{{this.logo}}">
+    {{else}}
+        <img src = "/public/images/assets/org.png">
+    {{/if}}
+    </div>
+
+    <div>
+        <h5>{{this.jobTitle}} - &#160 <a href = "/profile/{{this.username}}"> {{ this.firstname }}</a></h5>
+        <h5>{{this.location}}</h5>
+    
+        <h6 class = "expiryDate">{{this.expiryDate}}</h6>
+    </div>
+    
+    {{#if this.isStudent}}
+         
+        <form method="GET" action="/listing/apply">
+            <input type="hidden" class="redirectAddress" name="redirectAddress" value="">
+            <input type="hidden" name="listing_id" value="{{listing_id}}">
+            <button type="submit">Apply</button>
+        </form>
+                    
+    {{/if}}
+    
+</div> --}}
+
+<div class = "home-listings-card">
+    
+
+    <a href="/profile/{{username}}">
+    {{#if logo}}
+        <img src= "/{{logo}}"/>
+    {{else}}
+        <img src= "/public/images/assets/org.png"/>
+    {{/if}}
+    </a>
+
+    <table>
+        <tr>
+            <td><b>Username:</b></td>
+            <td>
+                {{#if this.firstname}}
+                    <a href="/profile/{{username}}">{{firstname}}</a>
+                {{else}}
+                    <a href="/profile/{{username}}">{{username}}</a>
+                {{/if}}
+            </td>
+        </tr>
+        <tr>
+           <td><b>Organization: </b></td> 
+           <td>{{firstname}}</td>
+        </tr>
+        <tr>
+            <td><b>Job Title:</b></td>
+            <td>{{jobTitle}}</td>
+        </tr>
+        <tr>
+            <td><b>Expiry Date:</b></td>
+            <td class = 'expiryDate'>{{expiryDate}}</td>
+        </tr>
+    </table>
+
+    {{#if this.isStudent}}
+        {{#unless this.applied}}
+            <form method = "GET" action = "/listing/apply" class = "apply-form">
+                <input type = "hidden" class = "redirectAddress" name = "redirectAddress" value = "">
+                <input type = "hidden" name = "listing_id" value = "{{listing_id}}">
+                <button type="submit" class = "apply-button">Apply</button>
+            </form>
+        {{else}}
+            <form class = "apply-form">
+                <button class = "applied-button">Applied</button>
+            </form>
+        {{/unless}}
+    {{/if}}
+
+</div>

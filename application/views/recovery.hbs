@@ -1,0 +1,29 @@
+<head>
+    <link rel = 'stylesheet' href = '/public/stylesheets/recovery.css'>
+</head>
+
+<h1>Recover Your Account</h1>
+<fieldset>
+    <legend>Please fill in the both fields.</legend>
+    <form action = '/recovery/reset' method = 'POST' enctype = 'application/x-www-form-urlencoded'>
+        <table>
+            <tr>
+                <td>
+                    <label> Username: </label>
+                </td>
+                <td>
+                    <input type = 'text' name = 'username' placeholder = 'username' required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label> Email: </label>
+                </td>
+                <td>
+                    <input type = 'email' name = 'email' placeholder = 'email' required>
+                </td>
+            </tr>
+        </table>
+        <input type = 'submit' value = 'submit'>     
+    </form>
+</fieldset>

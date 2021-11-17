@@ -1,0 +1,63 @@
+<head>
+    <link rel = "stylesheet" href = "/public/stylesheets/connections_style.css">
+    <script type = "application/javascript" src = "/public/javascripts/connectionFilter.js"></script>
+</head>
+
+<body>
+    <table id = "filters">
+        <tr>
+            <td><a onclick = "filter('all');"> All </a></td>
+            <td><a onclick = "filter('studentResults');"> Students </a></td>
+            <td><a onclick = "filter('teacherResults');"> Teachers </a></td>
+            <td><a onclick = "filter('employerResults');"> Employers </a></td>
+        </tr>
+    </table>
+    
+    <h4 class = "header">Students</h4>
+    <div id = "studentResults">
+        {{#if (equals results.[0] 0)}}
+            <h4>No student connections yet!</h4>   
+        {{else}}
+            <div class = 'connectionResults'>
+                {{#each results.[0]}}
+                    {{> connection_card_individual }}
+                {{/each}}
+            </div>
+        {{/if}}
+    </div> 
+    
+    <h4 class = "header">Teachers</h4>
+    <div id = "teacherResults">
+        {{#if (equals results.[1] 0)}}
+            <h4>No teacher connections yet!</h4>
+        {{else}}
+            <div class = 'connectionResults'>
+                {{#each results.[1]}}
+                    {{> connection_card_individual }}
+                {{/each}}
+            </div>
+        {{/if}}
+    </div>
+    
+    <h4 class = "header">Employers</h4>
+    <div id = "employerResults">
+        {{#if (equals results.[2] 0)}}  
+            <h4>No employer connections yet!</h4>
+        {{else}}
+            <div class = 'connectionResults'>
+                {{#each results.[2]}}
+                    {{> connection_card_org }}
+                {{/each}}
+            </div>
+        {{/if}}
+    </div> 
+    
+    <script>
+        const elements = document.getElementsByClassName('redirectURL');
+        
+        for (element of elements) {
+            element.value = window.location.href;
+        }
+    </script>
+
+</body>

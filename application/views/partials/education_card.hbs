@@ -1,0 +1,19 @@
+<div id = 'education-{{this.education_id}}' class = "education-card">
+    <div class = 'education-card-header'>
+        <h4>{{ this.degree_name }} - {{ this.degree_type }}</h4>
+        {{#if (equals this.fk_uid this.viewerId)}}
+            <button onclick = "hideAndFetch('education-{{this.education_id}}','/education/delete/{{this.fk_uid}}/{{this.education_id}}')">X</button>
+        {{/if}}
+    </div>
+    
+    <h5>{{ this.university }}</h5>
+    <div class = 'dates'>
+        <h5>{{ this.beginDate }}&nbsp;</h5>
+        
+        {{#if (equals this.ongoing 0)}}
+           <h5> - {{ this.endDate }}</h5>
+        {{else}}
+           <h5> - present</h5>
+        {{/if}}
+    </div>
+</div>

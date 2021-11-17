@@ -1,0 +1,69 @@
+{{#if (equals this.poster_id this.viewerId)}} {{!-- Owner view. Nearly identical to below but shows when hidden or expired. --}}
+    
+    <div class="listing-card" id = 'listing-card-{{this.listing_id}}'>
+        <div class = 'listing-info'>
+            <h4>{{this.jobTitle}}</h4>
+            <h5>{{ this.description }}</h5> {{!-- Add button to collapse (hide) description --}}
+            <div class='dates'> {{!-- If dates are ugly in the partial, create new class. do not modify dates class --}}
+                <h5 class = 'expiryDate'>{{this.expiryDate}}</h5>
+            </div>  
+        </div>
+        
+        <div class = "button-panel">
+            <button onclick = "hideAndFetch('listing-card-{{this.listing_id}}', '/listing/delete/{{this.listing_id}}')">
+                Delete
+            </button>
+
+            <form method="GET" action="/listing/hide/{{this.listing_id}}">
+                <button type="submit">
+                    {{#if (equals this.hidden 0)}} {{!-- TODO: Must flip when button is clicked as page will not refresh--}}
+                        Hide
+                    {{else}}
+                        Reveal
+                    {{/if}}
+                </button>
+            </form>
+
+            <form method="GET" action="/listing/view/{{this.listing_id}}">
+                <button type = "submit">
+                    View 
+                </button>
+            </form>
+            
+
+            
+            {{!-- <a href="/listing/view/{{this.listing_id}}"> View </a> --}}
+           
+        </div>
+    </div>
+
+{{else}} 
+    {{#if (equals expired 0)}}
+        {{#if (equals hidden 0)}}
+            <div class = "listing-card">
+                <div class = 'listing-info'>
+                    <h4>{{ this.jobTitle }} - {{ this.location }}</h4>
+                    <h5>{{ this.description }}</h5> 
+                    <div class = 'dates'>
+                        <h5 class = 'expiryDate'>{{this.expiryDate}}</h5>
+                    </div>
+                </div>
+                <div class = 'button-panel'>
+                    {{#if this.isStudent}}
+                        {{#unless this.applied}}
+                            <form method="GET" action="/listing/apply">
+                                <input type="hidden" class="redirectAddress" name="redirectAddress" value="">
+                                <input type="hidden" name="listing_id" value="{{listing_id}}">
+                                <button type="submit">Apply</button>
+                            </form>
+                        {{else}}
+                            <form>
+                                <button class = 'applied'>Applied</button>
+                            </form>
+                        {{/unless}}
+                    {{/if}}
+                </div>
+            </div>
+        {{/if}}
+    {{/if}}
+{{/if}}

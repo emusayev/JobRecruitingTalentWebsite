@@ -1,0 +1,114 @@
+<head>
+    <script src="public/javascripts/convertToLocalTime.js"></script>
+    <link rel="stylesheet" href="/public/stylesheets/search.css"/>
+</head>
+
+<h3 id = 'search-definition'> {{results.[0]}} results for: {{title}}</h3>
+
+{{#if (equals results.[1] 0)}} {{!-- This if statement needs test --}}
+    <h3 class = 'empty-res'>No results found!</h3>
+{{else}}
+    {{#if (equals results.[0] "Users")}}
+        <div>
+            <div class = 'found-res'>
+                <h4 class = 'result-headers'>Users</h4>
+                <div class = "grouped-results">
+                    {{#each results.[1]}}
+                        {{> search_card_individual}}
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+        
+    {{else if (equals results.[0] "Employers")}}
+        <div class = 'found-res'>
+            <h4 class = 'result-headers'>Employers</h4>
+            <div class = "grouped-results">
+                {{#each results.[1]}}
+                    {{> search_card_org}}
+                {{/each}}
+            </div>
+        </div>
+
+    {{else if (equals results.[0] "Education")}}
+        <div class = 'found-res'>
+            <h4 class = 'result-headers'>Users with matching educational background</h4>
+            <div class = "grouped-results">
+                {{#each results.[1]}}
+                    {{> search_card_individual}}
+                {{/each}}
+            </div>
+        </div>
+    {{else if (equals results.[0] "Job Listings")}}
+        <div class = 'found-res'>
+            <h4 class = 'result-headers'>Job Listings</h4>
+            <div class = "grouped-results">
+                {{#each results.[1]}}
+                    {{> search_card_listing}}
+                {{/each}}
+            </div>
+        </div>   
+    {{else}}
+        
+        {{#if (equals results.[1].[0] 0)}}
+            <h4 class = 'empty-res'>No users found.</h4>
+        {{else}}
+            <div class = 'found-res'>
+                <h4 class = 'result-headers'>Users</h4>
+                <div class = "grouped-results">
+                    {{#each results.[1].[0]}}
+                        {{> search_card_individual}}
+                    {{/each}}
+                </div>
+            </div>
+        {{/if}}
+
+        {{#if (equals results.[1].[1] 0)}}
+            <h4 class = 'empty-res'>No employers found.</h4>
+        {{else}}
+            <div class = 'found-res'>
+                <h4 class = 'result-headers'>Employers</h4>
+                <div class = "grouped-results">
+                    {{#each results.[1].[1]}}
+                        {{> search_card_org}}
+                    {{/each}}
+                </div>
+            </div>
+        {{/if}}
+
+        {{#if (equals results.[1].[2] 0)}}
+            <h4 class = 'empty-res'>No job listings found.</h4>
+        {{else}}
+            <div class = 'found-res'>
+                <h4 class = 'result-headers'>Job Listings</h4>
+                <div class = "grouped-results">
+                    {{#each results.[1].[2]}}
+                        {{> search_card_listing}}
+                    {{/each}}
+                </div>
+            </div>    
+        {{/if}}
+
+        {{#if (equals results.[1].[3] 0)}}
+            <h4 class = 'empty-res'>No users with matching educational background found.</h4>
+        {{else}}
+            <div class = 'found-res'>
+                <h4 class = 'result-headers'>Users with matching educational background</h4>
+                <div class = "grouped-results">
+                    {{#each results.[1].[3]}}
+                        {{> search_card_individual}}
+                    {{/each}}
+                </div>
+            </div>
+        {{/if}}
+    {{/if}}
+{{/if}}
+
+<script>
+    convertToLocalTime('expiryDate');
+    if(res.locals.results[0] != 'Unfiltered'){
+        for(const element of document.getElementsByClassName('grouped-results')){
+            element.style.maxHeight = 'none';
+        }
+    }
+</script>

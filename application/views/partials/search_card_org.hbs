@@ -1,0 +1,33 @@
+<div class = 'results' id = 'org'>
+    {{!-- Modify to make pretty --}}
+    <a href="/profile/{{username}}">
+    {{#if logo}}
+        <img src= "{{logo}}"/>
+    {{else}}
+        <img src= "/public/images/assets/org.png"/>
+    {{/if}}
+    </a>
+    <table>
+        <tr>
+            <td>
+                {{#if this.firstname}}
+                    <a href="/profile/{{username}}">{{firstname}}</a>
+                {{else}}
+                    <a href="/profile/{{username}}">{{username}}</a>
+                {{/if}}
+            </td>
+        </tr>
+        <tr>
+            <td><b>Username: </b></td>
+            <td> {{username}} </td>
+        </tr>
+        <tr>
+            <td><b>Organization: </b></td>
+            <td> {{firstname}} </td>
+        </tr>
+        <tr>
+            <td><b>Location:</b></td>
+            <td> {{location}} </td>
+        </tr>
+    </table>
+</div>

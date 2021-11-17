@@ -1,0 +1,63 @@
+<form action = "/edit/updateUser" method="POST" enctype = "multipart/form-data">
+	<div id = 'file-submission-area'>
+  		<div class = "file-submission">
+			<div>
+				<label>Resume:</label>
+				<input type = "file" name = "resume"/>
+			</div>
+			
+			{{#if resume}}
+				<embed src = "/{{resume}}">
+			{{/if}}
+  		</div>
+	
+		<div class = "file-submission">
+			<div>
+		  		<label>Image:</label>
+				<input type = "file" name = "image"/>
+			</div>
+			{{#if image}}
+				<img src = "/{{image}}">
+			{{/if}}
+  		</div>
+	</div>
+
+		 
+	<fieldset>
+		<label>
+			First Name:
+			<input class = 'text-input' type = "text" name = "first" placeholder = "First Name" value = "{{firstname}}" maxlength = "126" required>
+		<label>
+			Last Name:
+			<input class = 'text-input' type = "text" name = "last" placeholder = "Last Name" value = "{{lastname}}" maxlength = "126" required>
+		</label>
+
+		<label>
+			Current Position:
+			<input class = 'text-input' type="text" name = "profession" placeholder = "Profession" value = "{{profession}}" maxlength = "126" required>
+		</label>
+
+		<label>
+			Current Location:
+			<input class = 'text-input' type="text" name = "location" placeholder = "Location" value = "{{location}}" maxlength = "126" required>
+		</label>
+
+			<label>
+				Gender:
+				<input class = 'text-input' type = "text" name = "gender" placeholder = "Gender" value = '{{gender}}' maxlength = "11" required>
+			<label>
+				Demograhic:
+				<input class = 'text-input' type = "text" name = "demographic" placeholder = "Demographic" value = '{{demographic}}' maxlength = "126" required>
+			</label>
+
+
+		<label>
+				Date of Birth:
+				<input type = "date" name = "dob" id = "dob" min = '1899-00-01' max = {{max}} value = {{dateOfBirth}} required pattern = "\d{4}-\d{2}-\d{2}">
+		</label>
+
+		<input class = 'text-input'  type = "text" name = "description" placeholder = "Tell us about yourself..." maxlength = "4094" value = "{{description}}" required>
+
+	</fieldset>
+	<input class = 'submit-button' type = "submit" value = "submit">
+</form>

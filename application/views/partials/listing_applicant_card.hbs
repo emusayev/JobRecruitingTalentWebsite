@@ -1,0 +1,42 @@
+<div class = "applicant-card">
+    <div>
+        {{#if this.profilepicture}}
+            <a href = "/profile/{{this.username}}">
+                <img src = "{{this.profilepicture}}">
+            </a>
+        {{else}}
+            <a href = "/profile/{{this.username}}">
+                <img src = "/public/images/assets/user.png">
+            </a>
+        {{/if}}
+    </div>
+
+    <table> 
+        <tr>
+            <td>
+                {{#if this.firstname}}
+                <b>Name: </b> <a href = "/profile/{{this.username}}">{{this.firstname}} {{this.lastname}}</a>
+                {{else}}
+                <b>Username: </b> <a href = "/profile/{{this.username}}">{{this.username}}</a>
+                {{/if}}
+            </td>
+            
+        </tr>
+        <tr>
+            <td>
+                {{#if this.location}}
+                <b>Location: </b> {{this.location}}
+                {{else}}
+                <b>Location: </b> N/A
+                {{/if}}
+            </td>
+            
+        </tr>
+    </table>
+        
+    <form action = '/connect/add' id = 'connectForm-{{this.uid}}' method = 'POST' enctype='application/x-www-form-urlencoded'>
+        <input type = 'hidden' name = 'userid' value = {{this.uid}}>
+        <input type = 'hidden' name = 'redirectURL' class = 'redirectURL' value = ''>
+    </form>
+    <button type = 'submit' form = 'connectForm-{{this.uid}}'>Connect</button>
+</div>

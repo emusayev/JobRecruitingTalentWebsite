@@ -1,0 +1,37 @@
+<form action = "/edit/updateOrg" method="POST" enctype = "multipart/form-data">
+	<div id = "file-submission-area">
+		<div class = "file-submission">
+			<div>
+				<label>Logo:</label>
+				<input type = "file" name = "image"/>
+			</div>
+			{{#if logo}}
+				<img src = "/{{logo}}">
+			{{/if}}
+		</div>    
+
+	</div>
+	
+
+	<fieldset>
+			<label>
+				Organization Name:
+				<input class = "text-input" type = "text" name = "first" placeholder = "Organization Name" value = "{{firstname}}" maxlength = "126" required>
+			</label>
+   
+			<label>
+				Headquarters Location:
+				<input class = "text-input" type="text" name = "location" placeholder = "Location" value = "{{location}}" maxlength = "126" required>
+			</label> 
+	
+			<label>
+				Date of Establishment:
+				<input type = "date" name = "dob" id = "dob" min = '1899-00-01' max = {{max}} value = {{dateOfBirth}} required pattern = "\d{4}-\d{2}-\d{2}">
+			</label>
+	
+			<input class = "text-input" type = "text" name = "description" placeholder = "Tell us about organization..." maxlength = "4094" value = "{{description}}" required>
+   
+  </fieldset>
+
+	<input class = "submit-button" type = "submit" value = "submit">
+</form>

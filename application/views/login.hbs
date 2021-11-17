@@ -1,0 +1,29 @@
+<head>
+    <link rel='stylesheet' href='public/stylesheets/login.css'>
+</head>
+
+<body>
+    <div id="login">
+        <form action = "/users/login" method = "POST" enctype = "application/x-www-form-urlencoded">
+            <fieldset>
+                <label>
+                    Username:
+                    <input type="text" name="username" placeholder="Username" maxlength="62" required>
+                </label>
+                <label>
+                    Password:
+                    <input type="password" name="password" placeholder="Password" maxlength="128" required>
+                </label>
+                <input type="submit" value="Login">
+                <a href = "/recovery">Forgot your password?</a>
+            </fieldset>
+        </form>
+
+        <label>
+            Not a member yet?
+            <a href="/register">
+                <button>Register</button>
+            </a>
+        </label>
+    </div>
+</body>

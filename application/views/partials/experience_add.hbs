@@ -1,0 +1,24 @@
+<form id = "experience-form" action = "/experience/add" method="POST" enctype="application/x-www-form-urlencoded">
+    <h4>Share an experience:</h4>
+    <div class = "experience-info">
+        <input type="text" name="experience" placeholder="Experience" maxlength="126" required>
+        <input type="text" name="employer" placeholder="Employer" maxlength="126" required>
+    </div>
+
+    <textarea type="text" name="description" placeholder="Share your thoughts..." maxlength="510" required></textarea>
+
+    <div class = 'add-dates'>
+        <input type="date" id="expBeginDate" name="beginDate" min="1900-00-01" max="2022-00-01" required>
+        
+        <h5 id = 'expTo'> To </h5   >
+        
+        <input type="date" id="expEndDate" name="endDate" min="1900-00-01" max="2022-00-01">
+        
+        <label for="expCheckBox"> Present:</label>
+        <input type="checkbox" id="expCheckbox" onclick='toggleOnGoing(`expCheckbox`, `expEndDate`); toggleHideElement(`expTo`)' name="ongoing">
+    </div>
+    <input type="submit" value="Share">
+</form>
+<script>
+    document.getElementById('expCheckbox').checked = false;
+</script>

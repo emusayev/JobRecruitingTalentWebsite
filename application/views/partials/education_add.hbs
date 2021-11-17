@@ -1,0 +1,25 @@
+<form id = "education-form" action = "/education/add" method="POST" enctype="application/x-www-form-urlencoded">
+    <h4>Share an educational experience:</h4>
+    <div class = "diploma-info">
+        <input type="text" name="degreeName" placeholder="Field" maxlength="126" required>
+        <input type="text" name="degreeType" placeholder="Degree Type" maxlength="30" required>
+    </div>
+
+    <input type="text" name="university" placeholder="University or School" maxlength="126" required>
+
+    <div class = 'add-dates'>
+        <input type="date" id="eduStartDate" name="beginDate" min="1900-00-01" max="2022-00-01" required>
+        
+        <h5 id = 'eduTo'> To </h5>
+        
+        <input type="date" id="eduEndDate" name="endDate" min="1900-00-01" max="2022-00-01">
+        
+        <label for = "eduCheckbox">Present:</label>
+        <input type = "checkbox" id = "eduCheckbox" onclick = 'toggleOnGoing(`eduCheckbox`, `eduEndDate`); toggleHideElement(`eduTo`);' name = "ongoing">
+    </div>
+
+    <input type = "submit" value = "Share">
+</form>
+<script>
+    document.getElementById('eduCheckbox').checked = false;
+</script>

@@ -1,0 +1,15 @@
+<form id = "listing-form" action = "/listing/add" method="POST" enctype="application/x-www-form-urlencoded">
+    <h3 id = 'listing-form-defintion'>Post a job listing:</h3>
+    <div>
+        <input type="text" name="jobTitle" placeholder="Job Title" maxlength="126" required>
+        <input type="location" name="location" placeholder="Location of Employment" maxlength="126" required>
+    </div>
+
+    <textarea type="text" name="description" placeholder="Information on and requirements for the position..." maxlength="4094" required></textarea>
+
+    <div class = 'add-dates'>
+        <label>Cut-Off Date:</label>
+        <input type="date" id="expEndDate" name="endDate" min="1900-00-01" max="2022-00-01">
+    </div>
+    <input type="submit" value="Post">
+</form>

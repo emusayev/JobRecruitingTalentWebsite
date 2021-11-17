@@ -1,0 +1,82 @@
+body {
+    font-family: 'Verdana', serif;
+}
+
+div {
+    border-radius: 1vw;
+    border:  #276792 0.2vw inset;   
+}
+
+
+.content {
+    margin: 0 1.5% 1% 1.5%;
+    padding: .25% .5% .25% .5%;
+    border: #42494931 solid .6vw;
+    border-style: hidden solid hidden solid;
+    color: #e5eaecec;
+    background-color: #dadada;
+}
+
+.content div {
+    background-color: #276792;
+    padding: .25% .5% .25% .5%;
+    border-color: #276792;
+}
+
+.content > div:not(:first-child) {
+    margin: .25% .25% .5% 5%;
+}
+
+#info {
+    display: flex;
+    margin: .25% .25% .5% .25%;
+}
+
+#info > div > img {
+    cursor: pointer;
+}
+
+.location {
+    display: flex;
+    /* display: inline; */
+    align-items: center;
+    border: unset;
+}
+
+.location > img {
+    height: 100%;
+    padding-right: .25vw;
+    border: none;
+}
+
+#info > * {
+    margin: .25% .25% .25% .25%;
+    border: none;  
+}
+
+img {
+    border-radius: 1vw;
+    margin-right:.5%;
+    max-height: 36vh;
+    max-width: 100%;
+}
+
+.paragraph {
+    text-indent: 10px;
+}
+
+#projects > div {
+    display: flex;
+    align-items: center;
+    background-color:  #dadada;
+    color: #276792;
+    -webkit-text-stroke: black;
+    -webkit-text-stroke-width: .05vh;
+    -webkit-text-stroke-color: black;
+}
+
+#projects > div > img {
+    max-height: 16vh;
+    max-width: 8vw;
+    padding-right: 1vw;
+}

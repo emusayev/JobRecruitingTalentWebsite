@@ -1,0 +1,34 @@
+<head>
+    <script src="/public/javascripts/convertToLocalTime.js"></script>
+    <link rel = "stylesheet" href = "/public/stylesheets/listing_details.css">
+</head>
+
+<div class = "page-results">
+    <h4>{{results.[0].jobTitle}}</h5>
+    <b>Location:</b> {{results.[0].location}}
+    <div>
+        <b>Description:</b> {{results.[0].description}}
+    </div>
+    
+    <h5 class = "expiryDate">{{results.[0].expiryDate}}</h5>
+</div>
+
+
+<h4 id = "job-applicants-header" class = "header">Applicants</h4>
+{{#if results.[1].[0].username}}
+    {{#each results.[1]}}
+        {{> listing_applicant_card}}
+    {{/each}}
+{{else}}
+    <h5>No applicants at this time.</h5>
+{{/if}}
+
+
+<script> 
+    convertToLocalTime("expiryDate");
+    const elements = document.getElementsByClassName('redirectURL');
+
+    for (const element of elements) {
+        element.value = window.location.href;
+    }
+</script>

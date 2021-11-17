@@ -1,0 +1,58 @@
+#job-applicants-header{
+  margin-bottom: 0.2vh;
+}
+
+.header {
+  text-align: center;
+  background-color: #276792;
+  padding: 1vh 0 1vh 0;
+  color: #e5eaecec;
+  border: #276792 0.25vh inset;
+  border-radius: 1vh;
+}
+
+.applicant-card {
+  display: flex;
+  align-items: center;
+  background-color: #e5eaecec;
+  border-radius: .3vw;
+  border: #276792 0.25vh inset;
+  margin: 1vh .5vh;
+  padding: .2vw;
+}
+
+.applicant-card img {
+  width: 12vw;
+  max-height: 32vh;
+  min-height: 16vh;
+  border: white ridge .25vw;
+  border-radius: .4vw;
+  padding: .5vw;
+}
+
+.applicant-card table {
+  margin-left: 1vw;
+}
+
+
+.applicant-card button {
+  margin-left: auto;
+  background-color: #276792;
+  color: #e5eaecec;
+  border: #276792 outset 0.4vh;
+  border-radius: 1vh;
+  width: 6vw;
+  font-size: 1.2vh;
+  font-weight: bold;
+  margin-right: .75vw;
+}
+
+.applicant-card button:hover {
+  cursor: pointer;
+}
+
+.page-results {
+  background-color: #e5eaecec;
+  padding: 1vh;
+  border-radius: 1vh;
+}

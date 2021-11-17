@@ -1,0 +1,49 @@
+<div class = "results" id = "users">
+	<a href="/profile/{{username}}">
+    {{#if profilepicture}}
+        <img src= "/{{profilepicture}}"/>
+    {{else}}
+        <img src= "/public/images/assets/user.png"/>
+    {{/if}}
+    </a>
+	
+	<table>
+		<tr>
+			<td>
+  	  			{{#if this.firstname}}
+  	  		    	<a href="/profile/{{username}}">{{firstname}} {{lastname}}</a>
+  	  		    {{else}}
+  	  		    	<a href="/profile/{{username}}">{{username}}</a>
+  	  		    {{/if}}
+  	  		</td>
+		</tr>
+		<tr>
+        	<td><b>Username: </b></td>
+         	<td> {{username}} </td>
+        </tr>
+        	<tr>
+				<td><b>First name: </b></td>
+				<td> {{firstname}} </td>
+			</tr>
+        	<tr>
+				<td><b>Last name:  </b></td>
+				<td> {{lastname}} </td>
+			</tr>
+        	<tr>
+				<td><b>Occupation:  </b></td>
+				<td> {{currentProfession}} </td>
+			</tr>
+        	<tr>
+				<td><b>Location:  </b></td>
+				<td> {{location}} </td>
+			</tr>
+        	<tr>
+				<td><b>Gender:  </b></td>
+				<td> {{gender}} </td>
+			</tr>
+        	<tr>
+				<td><b>Demographic:  </b></td>
+				<td> {{demographic}} </td>
+			</tr>
+  	</table>
+</div>

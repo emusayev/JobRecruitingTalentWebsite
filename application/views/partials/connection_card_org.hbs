@@ -1,0 +1,43 @@
+<div class = "org-connection-card">
+  	
+	<a href="/profile/{{username}}">
+		{{#if logo}}
+			<img src= "/{{logo}}"/>
+		{{else}}
+			<img src= "/public/images/assets/org.png"/>
+		{{/if}}
+	</a>
+		
+	<table>
+		<tr>
+			<td>
+		  		{{#if this.firstname}}
+					<a href="/profile/{{username}}">{{firstname}}</a>
+		  		{{else}}
+					<a href="/profile/{{username}}">{{username}}</a>
+		  		{{/if}}
+		</td>
+		</tr>
+			<tr><td><b>Username: </b></td><td> {{username}} </td></tr>
+			<tr><td><b>Name: </b></td><td> {{firstname}} </td></tr>
+			<tr><td><b>Email:  </b></td><td> {{email}} </td></tr>
+		<tr>
+			<td>
+				{{#if this.location}}
+				<b>Location:  </b><td> {{location}} </td>
+				{{else}}
+				<b>Location:  </b><td> N/A </td>
+				{{/if}}
+			</td>
+		</tr>
+	</table>
+			
+
+		
+	<form action = '/connect/delete' id = 'disconnectForm-{{this.uid}}' method = 'POST' enctype = 'application/x-www-form-urlencoded'>
+		<input type = 'hidden' name = 'userid' value = {{this.uid}}>
+		<input type = 'hidden' name = 'redirectURL' class = 'redirectURL' value = ''>
+	</form>
+	<button type = 'submit' form = 'disconnectForm-{{this.uid}}'>End Connection</button>
+
+</div>

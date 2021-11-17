@@ -1,0 +1,117 @@
+body {
+  font: 4vh;
+  font-family: 'Verdana', serif;
+  margin: 0 1.5% 1% 1.5%;
+}
+
+#logo {
+    padding: .3vh;
+    padding-bottom: 0;
+    margin-bottom: 0;
+    max-height: 18vh;
+}
+
+#header h6 {
+    margin-top: 0;
+    margin-bottom: 0.5%;
+}
+
+
+a {
+  color: #00B7FF;
+}
+
+nav a {
+    font-weight: bold;
+    color: #e5eaecec;
+    background-color:  #276792;
+    margin-right: .15vw;
+    margin-left: .15vw;
+    padding: .4vh;
+    border: #276792 0.15vw inset;
+    border-radius: .5vw;
+    text-decoration: none;
+}
+
+nav form {
+    display: flex;
+}
+
+nav form a {
+    align-self: center;
+    margin-left: .3vw;
+}
+
+nav a:hover {
+    cursor: pointer;
+}
+
+nav a:active {
+    border: #e5eaecec 0.15vw inset
+}
+
+nav {
+    display: flex;
+    background-color: #e5eaecec;
+    border: #276792 0.2vw inset;
+    border-radius: .75vw;
+    margin-top: .05%;
+    margin-bottom: .5%;
+    padding: .25%;
+}
+
+.right-nav-buttons{
+    margin-left: auto;
+}
+
+#header {
+    border-radius: 1vw;
+    border:  #276792 0.2vw inset;   
+    background-color:  #276792 ;
+    text-align: center;
+    margin-top: .25%;
+    color:  #e5eaecec;
+}
+
+#flash-message {
+    position: fixed;
+    left: 50%;
+    top: -10vh;
+    animation-delay: 1s;
+    animation: slide 10s 1;
+}
+
+#flash-message div {
+    color: #e5eaecec;
+    text-align: center;
+}
+
+#success-message {
+    background-color: black;
+    border-radius: .5vw;
+    border: black 0.2vw inset;
+
+}
+
+#error-message {
+    background-color: #630404ec;
+    border-radius: .5vw;
+    border:#630404ec 0.2vw inset;
+}
+
+@keyframes slide {
+    0% {
+      transform: translate(-50%, 0);    
+    }
+    10% {
+      transform: translate(-50%, 30vh);
+    }
+
+    50% {
+        transform: translate(-50%, 0);
+      }
+
+    100% {
+        transform: translate(-50%, -40vh);
+    }
+}

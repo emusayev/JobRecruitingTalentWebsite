@@ -1,0 +1,86 @@
+<head>
+	<link rel="stylesheet" href = "/public/stylesheets/home.css">
+	<script src="public/javascripts/convertToLocalTime.js"></script>
+</head>
+
+<h1 id = "about-us-header" class = 'header'>About Us </h1>
+<div class="about-us">
+	<p>
+			  Our team is building a website that addresses a major problem for students
+		on campuses around the nation, thus we decided to create a web application called
+		SkillSeek. Skillseek aims to resolve a significant concern for students
+		when they graduate from college, university, or highschool, which is finding a job
+		. Our website provides a student friendly platform where users can
+		post their resumes in hopes of finding their dream job. Currently, students
+		graduating in a post-COVID world are facing immense difficulties finding a job
+		coupled with overwhelming economic pressure. With the introduction of our web
+		application, we are hoping to help students, teachers, and organizations by giving
+		them a means to interact with each other to ease the employment process. We aim
+		to facilitate the process by allowing students to differentiate themselves by
+		marketing their educational background and work experience. Furthermore, our
+		platform streamlines the massive undertaking of sifting through potential job
+		candidates by providing an effortless way of reviewing candidate resumes, teacher
+		reviews, and other relevant information that are considered when employers make
+		the determination of employing an individual. SkillSeek is also a great tool for
+		organizations aiming to diversify their workforce by giving users the option of
+		specifying their gender and demographic.
+		What distinguishes our platform from those of our competitors is that we are
+		a non-profit organization as we don't charge premiums like our competitors. 
+		As a team, we make every effort to simplify our user interface to
+		make it accessible to as many individuals as possible. We encourage everyone to
+		come and visit our website so we can provide them the best job listing in the
+		market. To summarize, with the heavily competitive nature of the current job
+		market and the global depression we are currently facing, our team is doing its
+		utmost to alleviate and ease the difficulties upcoming graduates shall face in
+		finding job opportunities and bridge the gap between these individuals and
+		employers.
+	</p>
+</div>
+
+<h4 id = "job-listings-header" class = "header">Most Recent Job Listings</h4>
+{{#if results.[0].listing_id}}
+	<div class = 'job-listings'>
+		{{#each results}}
+			{{> home_listing_card}}
+		{{/each}}
+	</div>
+{{else}}
+	<h5>No ongoing job listings available at this time.</h5>
+{{/if}}
+
+<h4 id = "meetthedevs-header" class = "header">Meet The Developers</h4>
+<div id = "meetthedevs">
+    <div>
+        <img src="/public/images/ali/ali_pp.jpg">
+        <h4><a href= "/ali">Ali Bin Sabir</a></h4>
+        <h5>Front-End &amp; GitHub Master</h5>
+    </div>
+    <div>
+        <img src="/public/images/assets/user.png">
+        <h4><a href= "/begum">Begum Sakin</a></h4>
+        <h5>Front-End &amp; Documentation Master</h5>
+    </div>
+    <div>
+        <img src="/public/images/emin/profile.jpg">
+        <h4><a href= "/emin">Emin Musayev</a></h4>
+        <h5>Front-End &amp; Team Leader</h5>
+    </div>
+    <div>
+        <img src = "/public/images/assets/user.png">
+        <h4><a href="/melissa">Melissa Gonzalez</a></h4>
+        <h5>Front-End &amp; Documentation Assistant</h5>
+    </div>
+    <div>
+        <img src = "/public/images/ramzi/ramzi_pp.jpg">
+        <h4><a href = "/ramzi">Ramzi Abou Chahine</a></h4>
+        <h5>Back-End &amp; Database Development</h5>
+    </div>
+</div>
+
+<script>
+	convertToLocalTime('expiryDate');
+	const list = document.getElementsByClassName("redirectAddress");
+	for(const item of list){
+		item.value = window.location.href;
+	}
+</script>

@@ -1,0 +1,52 @@
+<div class = "individual-connection-card">
+  	  		
+	<a href="/profile/{{username}}">
+		{{#if profilepicture}}
+			<img src= "/{{profilepicture}}"/>
+		{{else}}
+			<img src= "/public/images/assets/user.png"/>
+		{{/if}}
+	</a>
+		
+  	<table>
+		<tr>
+			<td>
+		  		{{#if this.firstname}}
+					<a href="/profile/{{username}}">{{firstname}} {{lastname}}</a>
+		  		{{else}}
+					<a href="/profile/{{username}}">{{username}}</a>
+		  		{{/if}}
+			</td>
+		</tr>
+
+		<tr><td><b>Username: </b></td><td> {{username}} </td></tr>
+		<tr><td><b>First name: </b></td><td> {{firstname}} </td></tr>
+		<tr><td><b>Last name:  </b></td><td> {{lastname}} </td></tr>
+		<tr><td><b>Email:  </b></td><td> {{email}} </td></tr>
+		<tr>
+			<td>
+				{{#if this.currentProfession}}
+				<b>Occupation:  </b><td> {{currentProfession}} </td>
+				{{else}}
+				<b>Occupation:  </b><td> N/A </td>
+				{{/if}}
+			</td>
+		</tr>
+		<tr>
+			<td>
+				{{#if this.location}}
+				<b>Location:  </b><td> {{location}} </td>
+				{{else}}
+				<b>Location:  </b><td> N/A </td>
+				{{/if}}
+			</td>	
+		</tr>
+	</table>
+			
+  	<form action = '/connect/delete' id = 'disconnectForm' method = 'POST' enctype = 'application/x-www-form-urlencoded'>
+		<input type = 'hidden' name = 'userid' value = {{this.uid}}>
+		<input type = 'hidden' name = 'redirectURL' class = 'redirectURL' value = ''>
+ 	</form>
+  	<button type = 'submit' form = 'disconnectForm'>End Connection</button>
+  	
+</div>

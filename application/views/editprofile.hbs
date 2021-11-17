@@ -1,0 +1,11 @@
+<head>
+    <link rel = "stylesheet" href = "/public/stylesheets/edit.css">
+</head>
+
+{{#if isEmployer}}
+    {{> edit_org }}
+{{else}}
+    {{> edit_user }}
+{{/if}}
+
+{{> edit_password}}

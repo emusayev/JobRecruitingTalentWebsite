@@ -1,0 +1,103 @@
+.grouped-results {
+    margin-left: 1.5vw;
+    margin-right: 1.5vw;
+    margin-bottom: 1vw;
+    max-height: 80vh;
+    overflow-y: auto;
+    border: #276792 0.2vw inset;
+    border-radius: .75vw;
+    background-color: white;
+}
+
+.empty-res {
+    align-content: center;
+    margin-left: 1.5vw;
+    margin-right: 1.5vw;
+    margin-bottom: 1vw;
+    max-width: max-content;
+    padding: 0.25vw;
+    background-color: #e5eaecec;
+    border: #276792 0.2vw inset;
+    border-radius: .75vw;
+}
+
+#search-definition {
+    background-color: #276792;
+    text-align: center;
+    color: #e5eaecef;
+    padding: .3vw;
+    margin-left: .5vw;
+    margin-right: .5vw;
+    border: #276792 0.2vw outset;
+    border-radius: .75vw;
+}
+
+.result-headers {
+    margin-left: 1vw;
+    margin-right: 1vw;
+    padding: .25vw;
+    max-width: max-content;
+    background-color: #e5eaecec;
+    border: #276792 0.2vw outset;
+    border-radius: .4vw;
+}
+
+.found-res { 
+    background-color: #276792;
+    border: #276792 0.2vw inset;
+    border-radius: .75vw;
+    margin-bottom: 1vw;
+}
+
+.results {
+    display: flex;
+    max-width: 100%;
+    background-color: #e5eaecec;
+    margin: 1vh .5vh;
+    padding: .2vw;
+    border-radius: .3vw;
+}
+
+.results > * {
+    align-self: center;
+}
+
+.results img {
+    width: 12vw;
+    max-height: 32vh;
+    min-height: 16vh;
+    border: white ridge .25vw;
+    border-radius: .4vw;
+    padding: .5vw;
+}
+
+.results > table{
+    margin-left: 1vw;
+    margin-right: 3vw;
+}
+
+.info-area {
+    display: flex;
+    width: 40%;
+}
+
+.info-area > * {
+    align-self: center;
+}
+
+.description-area {
+    display: flex;
+    flex-direction: column;
+    border: ridge #e5eaecec .5vh;
+    border-radius: 1vh;
+    padding-left: .5vw;
+    padding-right: .5vw;
+    margin-right: 1vw;
+    width: 60%;
+    height: 100%; /*not working*/
+}
+
+.description-area p:first-child {
+    margin-bottom: .05vh;
+}
+

@@ -1,0 +1,28 @@
+body form fieldset {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border-radius: 1vw
+}
+
+#login > * {
+    margin: 1% 1% .25% 1%;
+}
+
+#login form fieldset {
+    padding: 1% 1% 1% 1%;
+}
+
+#login form fieldset > * {
+    margin: .5% 0% .5% 0%;
+}
+
+#login button, #login input[type = 'submit'] {
+    padding: .2%;
+    border: #276792 0.15vw inset;
+    border-radius: .5vw;
+    font-weight: bold;
+    color: #e5eaecec;
+    background-color:  #276792;
+}
+

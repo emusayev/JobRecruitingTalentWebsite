@@ -1,0 +1,45 @@
+<div class = "results" class = "job-listing">
+
+    <div class = "info-area">
+        <a href="/profile/{{username}}">
+        {{#if logo}}
+            <img src= "/{{logo}}"/>
+        {{else}}
+            <img src= "/public/images/assets/org.png"/>
+        {{/if}}
+        </a>
+
+        <table>
+            <tr>
+                <td>
+                    {{#if this.firstname}}
+                        <a href="/profile/{{username}}">{{firstname}}</a>
+                    {{else}}
+                        <a href="/profile/{{username}}">{{username}}</a>
+                    {{/if}}
+                </td>
+            </tr>
+            <tr>
+                <td><b>Username:</b></td>
+                <td> {{username}} </td>
+            </tr>
+            <tr>
+                <td><b>Organization:</b></td>
+                <td> {{firstname}} </td>
+            </tr>
+            <tr>
+                <td><b>Job Title:</b></td>
+                <td> {{jobTitle}} </td>
+            </tr>
+            <tr>
+                <td><b>Expiry Date:</b></td>
+                <td><em class = "expiryDate">{{expiryDate}}</em></td>
+            </tr>
+        </table>
+    </div>
+    <div class = "description-area">
+        <p><b>Description:</b></p>
+        <p class = 'text-description'>{{description}}</p>
+    </div>
+        
+</div>

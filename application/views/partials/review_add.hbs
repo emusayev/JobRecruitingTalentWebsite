@@ -1,0 +1,13 @@
+<div id = 'review-add'>
+    <h4>Give {{results.[0].firstname}} a review!</h4>
+    <form action = "/rate/add/{{results.[0].uid}}" method = "POST" enctype = "application/x-www-form-urlencoded">
+        <div>
+            <input name = "title" type = "text" placeholder = "Title" maxlength = "62" required>
+            <input name = "rating" type = "number" placeholder = "Rating out of 10" min = "0" max = "10" required>
+        </div>
+
+        <textarea name = "review" type = "text" placeholder = "Share your thoughts..." maxlength = "4094" required></textarea>
+
+        <input type = "submit" value = "Review">
+    </form>
+</div>

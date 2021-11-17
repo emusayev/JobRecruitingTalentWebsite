@@ -1,0 +1,28 @@
+<nav>
+		{{#if logged}}
+            <a class = 'left-nav-buttons' href = '/profile'>profile</a>
+			
+			<form action = "/search" method = "GET" id = 'search-form'>
+				<input type="search" name="search" placeholder="Search">
+				<input type="hidden" id="errorAddress" name="errorAddress" value="">
+				<select name="filter">
+					<option value="Unfiltered" selected> Unfiltered </option>
+    				<option value="Users"> Users </option>
+					<option value="Employers"> Employers </option>
+					<option value="Education"> Education </option>
+    				<option value="Job Listings"> Job Listings </option>
+  				</select>
+  				<a onclick= "document.getElementById('search-form').submit();">submit</a>
+			</form>
+
+    		<a class = 'right-nav-buttons' id = 'logout'>logout</a> {{!-- all right aligned buttons follow attribute--}}
+		{{else}}
+            <a class = 'right-nav-buttons' href= '/register'>register</a> {{!-- all right aligned buttons follow attribute--}}
+            <a href = '/login'>login</a>
+		{{/if}}
+</nav>
+
+<script>
+	document.getElementById("errorAddress").value = window.location.href;
+	
+</script>

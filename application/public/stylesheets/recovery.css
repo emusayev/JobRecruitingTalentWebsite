@@ -1,0 +1,41 @@
+h1 {
+    text-align: center;
+    background-color: #276792;
+    padding: .1vh 0 .1vh 0;
+    color: #e5eaecec;
+    border: #276792 0.25vh inset;
+    border-radius: 1vh;
+    margin-bottom: .5vh;
+}
+
+fieldset {
+    background-color: #e5eaecec;
+    border-radius: 1vh;
+    padding: 1vh 0 1vh 0;
+    display: flex;
+    flex-direction: column;
+}
+
+table {
+    padding-bottom: 2vh;
+}
+
+table tr:first-child td {
+    height: 4vh;
+}
+
+
+fieldset form input {
+    max-width: max-content;
+    margin-left: 1vw;
+}
+
+fieldset form input[type = 'submit']{
+    padding: .2%;
+    border: #276792 0.15vw inset;
+    border-radius: .5vw;
+    font-weight: bold;
+    color: #e5eaecec;
+    background-color:  #276792;
+}
+

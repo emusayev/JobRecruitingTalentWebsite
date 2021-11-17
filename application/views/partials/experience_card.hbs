@@ -1,0 +1,18 @@
+<div id = 'experience-{{this.experience_id}}' class = "experience-card">
+    <div class = "experience-card-header">
+        <h4>{{ this.experience }} - {{ this.employer }}</h4>
+        {{#if (equals this.fk_uid this.viewerId)}}
+            <button onclick = "hideAndFetch('experience-{{this.experience_id}}', '/experience/delete/{{this.fk_uid}}/{{this.experience_id}}')">X</button>
+        {{/if}}
+    </div>
+    
+    <h5>{{ this.description }}</h5>
+    <div class = 'dates'>
+        <h5>{{ this.beginDate }}</h5>
+        {{#if (equals this.onGoing 0)}}
+           <h5>{{ this.endDate }}</h5>
+        {{else}}
+           <h5>- present</h5>
+        {{/if}}
+    </div>
+</div>

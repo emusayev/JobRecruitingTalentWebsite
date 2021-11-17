@@ -1,0 +1,74 @@
+<head>
+    <link rel = "stylesheet" href = "/public/stylesheets/profile_org.css"/>
+</head>
+
+<div class = "id-info">
+    {{#if results.[0].logo}}
+        <img class = "image" src = "/{{results.[0].logo}}">
+    {{else}}
+        <img class = "image" src = "/public/images/assets/org.png">
+    {{/if}}
+
+    <div class = "id-card">
+        <div id = 'name'>
+            <h2>{{results.[0].firstname}} {{results.[0].lastname}}</h2>
+            {{#if (equals results.[0].username user)}}
+                <button onclick = "location.href = 'edit/org';">Edit Profile</button>
+                <button onclick = "location.href = 'connect/connections';">Connections</button>
+            {{else if (equals results.[4] 0)}}
+                <form action = '/connect/add' id = 'connectForm' method = 'POST' enctype = 'application/x-www-form-urlencoded'>
+                    <input type = 'hidden' name = 'userid' value = {{results.[0].uid}}>
+                    <input type = 'hidden' name = 'redirectURL' class = 'redirectURL' value = ''>
+                </form>
+                <button type = 'submit' form = 'connectForm'>Connect</button>
+            {{else}}
+                <form action = '/connect/delete' id = 'disconnectForm' method = 'POST' enctype = 'application/x-www-form-urlencoded'>
+                    <input type = 'hidden' name = 'userid' value = {{results.[0].uid}}>
+                    <input type = 'hidden' name = 'redirectURL' class = 'redirectURL' value = ''>
+                </form>
+                <button type = 'submit' form = 'disconnectForm'>End Connection</button>
+            {{/if}}
+        </div>
+
+        <div class = "id-extra">
+            <ul class="infoList">
+                <li><strong>Email</strong> <span>{{results.[0].email}}</span></li>
+	            {{#if results.[0].location}}
+		            <li><strong>Headquarters</strong> <span>{{results.[0].location}}</span></li>
+	            {{else}}
+		            <li><strong>Headquarters</strong> <span>Earth</span></li>
+	            {{/if}}
+	            {{#if results.[0].description}}
+		            <li>{{results.[0].description}}</li>
+	            {{/if}}
+	        </ul>
+        </div>
+    </div>
+</div>
+
+<div class = "extra-info">
+    <div id = "jobListings">
+        <h3 class = 'profile-zone-header'>Job Listings</h3>
+        {{#if results.[1].[0].poster_id}}
+            {{#each results.[1]}}
+                {{> listing_card}}
+            {{/each}}
+        {{/if}}
+
+        {{#if (equals results.[0].username user)}}
+            {{> listing_add }}
+        {{/if}}
+    </div>
+</div>
+
+
+<script>
+
+    convertToLocalTime('expiryDate');
+
+    const list = document.getElementsByClassName('redirectAddress');
+    for(const item of list){
+        item.value = window.location.href;
+    }
+        
+</script>

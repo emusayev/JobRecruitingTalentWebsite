@@ -1,0 +1,114 @@
+.job-listings {
+    height: 50vh;
+    overflow-y: auto;
+    border: .5vh #276792 inset;
+    border-radius: 1vh;
+}
+
+.home-listings-card {
+    display: flex;
+    background-color: #e5eaecec;
+    border-radius: .3vw;
+    margin: 1vh .5vh;
+    padding: .2vw;
+}
+
+.home-listings-card img {
+    width: 12vw;
+    max-height: 32vh;
+    min-height: 16vh;
+    border: white ridge .25vw;
+    border-radius: .4vw;
+    padding: .5vw;
+}
+
+.home-listings-card table {
+    align-self: center;
+    margin-left: 1vw;
+}
+
+.apply-form {
+    margin-left: auto;
+    display: flex;
+}
+
+.apply-button {
+    cursor: pointer;
+    align-self: center;
+    background-color: #276792;
+    color: #e5eaecec;
+    border: #276792 outset 0.4vh;
+    border-radius: 1vh;
+    width: 5vw;
+    font-size: 1.4vh;
+    font-weight: bold;
+    margin-right: .75vw;
+}
+
+.apply-button:active, button:active {
+    border: #e5eaecec inset 0.4vh;
+}
+
+.applied-button {
+    pointer-events: none;
+    cursor: not-allowed;
+    align-self: center;
+    background-color: #ced2d4fd;
+    border-radius: 1vh;
+    border: #e5eaecec inset 0.4vh;
+    width: 5vw;
+    font-size: 1.4vh;
+    font-weight: bold;
+    margin-right: .75vw;
+}
+
+.about-us {
+    background-color: #e5eaecec;
+    padding: 1vh 0.5vw;
+    border-radius: 1vh;
+}
+
+#about-us-header {
+    margin-bottom: 0.3vh;
+}
+
+#job-listings-header{
+    margin-bottom: 0.2vh;
+}
+
+#meetthedevs-header {
+    margin-top: 2vh;
+    margin-bottom: 0.5vh;
+}
+
+.header {
+    text-align: center;
+    background-color: #276792;
+    padding: 1vh 0;
+    color: #e5eaecec;
+    border: #276792 0.25vh inset;
+    border-radius: 1vh;
+}
+
+#meetthedevs {
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 1vh;
+    min-width: 100%;
+    background-color: #e5eaecec;
+    border-radius: 1vh;
+}
+
+#meetthedevs > div {
+    align-items: center;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+#meetthedevs img {
+    max-width: 10vw;
+    max-height: 20vh;
+    min-height: 20vh;
+    border-radius: 1vh;
+}

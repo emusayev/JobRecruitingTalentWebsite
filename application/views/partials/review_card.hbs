@@ -1,0 +1,24 @@
+<div id = 'review-{{this.rating_id}}' class = 'review-card'>
+    <img src = "{{this.profilepicture}}">
+
+    <div>
+        <div class = "rating-reviewer">
+            {{#if firstname}}
+                <a href = "/profile/{{this.username}}">{{this.firstname}} {{this.lastname}}</a>
+            {{else}}
+                 <a href = "/profile/{{this.username}}">{{this.username}}</a>
+            {{/if}}
+
+            {{#if (equals this.viewerId this.rater)}}
+                <button onclick = "hideAndFetch('review-{{this.rating_id}}', '/rate/delete/{{this.rated}}/{{this.rating_id}}')">X</button>
+            {{/if}}
+        </div>
+        <div  class = "rating-title">
+            <h4>{{this.rating}}/10</h4>
+            <h4>{{this.title}}</h4>
+        </div>
+
+        <p>{{this.review}}</p>
+        <h5>{{this.dateRated}}</h5>
+    </div>
+</div>

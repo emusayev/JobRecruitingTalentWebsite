@@ -1,0 +1,106 @@
+<div class = 'id-info'>
+    {{#if results.[0].profilepicture}}
+        <img class = "image" src = "/{{results.[0].profilepicture}}">
+    {{else}}
+        <img class = "image" src = "/public/images/assets/user.png">
+    {{/if}}
+
+    <div class = "id-card">
+        <div id = 'name'>
+            <h2>{{results.[0].firstname}} {{results.[0].lastname}}</h2>
+            {{#if (equals results.[0].username user)}}
+              <button onclick = "location.href = 'edit/user';">Edit Profile</button>
+              <button style = onclick = "location.href = 'connect/connections';">Connections</button>
+
+            {{else if (equals results.[4] 0)}}
+                <form action = '/connect/add' id = 'connectForm' method = 'POST' enctype = 'application/x-www-form-urlencoded'>
+                    <input type = 'hidden' name = 'userid' value = {{results.[0].uid}}>
+                    <input type = 'hidden' name = 'redirectURL' class = 'redirectURL' value = ''>
+                </form>
+                <button type = 'submit' form = 'connectForm'>Connect</button>
+            {{else}}
+                <form action = '/connect/delete' id = 'disconnectForm' method = 'POST' enctype = 'application/x-www-form-urlencoded'>
+                    <input type = 'hidden' name = 'userid' value = {{results.[0].uid}}>
+                    <input type = 'hidden' name = 'redirectURL' class = 'redirectURL' value = ''>
+                </form>
+                <button type = 'submit' form = 'disconnectForm'>End Connection</button>
+            {{/if}}
+        </div>
+        <div class = "id-extra">
+            {{#if (or results.[0].currentProfession results.[0].description)}}
+                <fieldset>
+                    {{#if results.[0].currentProfession}}
+                        <h4>{{results.[0].currentProfession}}</h4>
+                    {{else}}
+                        <h4>Looking for opportunities</h4>
+                    {{/if}}
+                    {{#if results.[0].description}}
+                        <p>{{results.[0].description}}</p>
+                    {{else}}
+                        <h4></h4>
+                    {{/if}}
+                </fieldset>
+            {{/if}}
+            {{#if (or results.[0].gender results.[0].location results.[0].demographic results.[0].dateOfBirth)}}
+            <ul class="infoList">
+                {{#if (equals results.[4] 1)}}
+                    <li><strong>Email</strong> <span>{{results.[0].email}}</span></li>
+                {{/if}}
+                {{#if results.[0].gender}}
+                    <li><strong>Gender</strong> <span>{{results.[0].gender}}</span></li>
+                {{else}}
+                    <li><strong>Gender</strong> <span>Unspecified</span></li>
+                {{/if}}
+                {{#if results.[0].location}}
+                    <li><strong>Current Location</strong> <span>{{results.[0].location}}</span></li>
+                {{else}}
+                    <li><strong>Current Location</strong> <span> Earth</span></li>
+                {{/if}}
+                {{#if results.[0].demographic}}
+                    <li><strong>Demographic</strong> <span> {{results.[0].demographic}}</span></li>
+                {{/if}}
+                <li><strong>Date of birth</strong> <span> {{results.[0].dateOfBirth}}</span></li>
+            </ul>
+            {{/if}}
+        </div>
+    </div>
+</div>
+
+<div class = 'extra-info'>
+    <div id = "experience-rating">
+        <div id = 'education'>
+            <h3 class = 'profile-zone-header'> Education</h3>
+            {{#if results.[1].[0].fk_uid}}
+                {{#each results.[1]}}
+                    {{> education_card}}
+                {{/each}}
+            {{else}}
+                <h6>Nothing here yet!</h6>
+            {{/if}}
+
+            {{#if (equals results.[0].username user)}}
+                {{> education_add }}
+            {{/if}}
+
+        </div>
+
+    <div class = "experience-rating">
+        <div id = 'experience'>
+            <h3 class = 'profile-zone-header'> Experience</h3>
+            {{#if results.[2].[0].fk_uid}}
+                {{#each results.[1] as |item|}}
+                    {{> experience_card}}
+                {{/each}}
+            {{else}}
+                <h6>Nothing here yet!</h6>
+            {{/if}}
+            {{#if (equals results.[0].username user)}}
+                {{> experience_add }}
+            {{/if}}
+        </div>
+    </div>
+
+    {{#if results.[0].resume}}
+        <embed id = "resume" src = "/{{resume}}">   
+    {{/if}}
+</div>

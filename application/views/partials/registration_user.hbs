@@ -1,0 +1,25 @@
+<div id = 'individual-form'>
+    <fieldset>
+        <label>
+            First Name:
+            <input type = "text" name = "first" placeholder = "First Name" maxlength = "126" required = "true">
+        </label>
+        <label>
+            Last Name:
+            <input type = "text" name = "last" placeholder = "Last Name" maxlength = "126" required = "true">
+        </label>
+    </fieldset>
+
+    <label>
+        Account Type:
+        <select name = "accountType"  required = "true">
+            <option value = "student" selected>Student</option>
+            <option value = "teacher">Teacher</option>
+        </select>
+    </label>
+
+    <label>
+        Date of Birth:
+        <input type = "date" name = "dob" id = "dob" min = '1899-00-01' max = '2022-00-01' required = "true" pattern = "\d{4}-\d{2}-\d{2}">
+    </label>
+</div>

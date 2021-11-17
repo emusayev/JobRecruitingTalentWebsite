@@ -1,0 +1,139 @@
+#jobListings {
+    background-color: #276792;
+    flex-grow: 1;
+    border-radius: .5vw;
+}
+
+.listing-card {
+    display: flex;
+    background-color: #e5eaecec;
+    border-radius: 1vh;
+    margin: .5vh;
+    padding-bottom: 0;
+}
+
+.button-panel {
+    display: flex;
+    flex-direction: column;   
+    margin-left: auto;
+}
+
+.applied {
+    pointer-events: none;
+    cursor: not-allowed;
+    background-color: #ced2d4fd;
+    border: #e5eaecec inset 0.4vh;
+    color: black;
+    border-radius: 1vh;
+    width: 5vw;
+    font-weight: bold;
+    margin-top: .75vh;
+    margin-right: .75vw;
+}
+
+.button-panel button:not(.applied) {
+    background-color: #276792;
+    color: #e5eaecec;
+    border: #276792 outset 0.4vh;
+    border-radius: 1vh;
+    width: 5vw;
+    font-weight: bold;
+    margin-top: .75vh;
+    margin-right: .75vw;
+}
+
+.button-panel form {
+    /* flex-grow: 1; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center
+}
+
+
+.button-panel button:active {
+    border: #e5eaecec inset 0.4vh;
+}
+
+
+.listing-info {
+    flex-grow: 1;
+    margin: .2vh .2vw .2vh .3vw;
+}
+
+.listing-info > * {
+    margin: 1vw 1vw 1vw 0 ;
+}
+
+.dates {
+    margin-bottom: 0;
+}
+
+#listing-form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2vh;
+    background-color: #e5eaecec;
+    border-radius: 1vh;
+    padding: .4vh .4vw .4vh .4vw;
+    margin: 2vh .2vw 1vh .3vw 
+}
+
+#listing-form-defintion {
+    margin-top: 0;
+    margin-bottom: 1vh;
+}
+
+#listing-form div:first-of-type {
+    display: flex;
+    margin-bottom: 1vh;
+}
+
+/* job title & location */
+#listing-form div:first-of-type input {
+    flex-grow: .5;
+    height: 3vh;
+}
+
+#listing-form div:first-of-type input:first-child {
+    margin-right: .4vw;
+}
+
+#listing-form div:first-of-type input:last-child{
+    margin-left: .4vw;
+}
+
+#listing-form textarea {
+    width: 99.7%;
+    align-self: center;
+    height: 30vh;
+    margin-bottom: 1vh;
+    resize: none;
+}
+
+#listing-form div:last-of-type {
+    margin-bottom: 1vh;
+}
+
+#listing-form input[type = 'submit']{
+    flex-grow: 1;
+    align-self: center;
+    background-color: #276792;
+    color: #e5eaecec;
+    border: #276792 outset 0.4vh;
+    border-radius: 1vh;
+    width: 5vw;
+    font-weight: bold;
+    margin-top: .75vh;
+    margin-right: .75vw;
+}
+
+#listing-form input[type = 'submit']:active {
+    border: #e5eaecec inset 0.4vh;
+}
+
+.add-dates {
+    align-self: start;
+}
+
+
+

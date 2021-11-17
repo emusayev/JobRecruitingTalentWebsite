@@ -1,0 +1,31 @@
+ <head>
+    <link rel = "stylesheet" href = "/public/stylesheets/profile.css">
+    <script src = "/public/javascripts/toggleOnGoing.js"></script>
+    <script src = "/public/javascripts/urlFetcher.js"></script>
+    <script src = "/public/javascripts/convertToLocalTime.js"></script>
+</head>
+ 
+    <div class = "profile">
+        {{#if (equals results.[0].accType "student") }}
+            {{> profile_student}}
+        {{else if (equals results.[0].accType "employer") }}
+            {{> profile_org}}
+        {{else}}
+            {{> profile_teacher}}
+        {{/if}}
+    </div>
+
+    <script>
+        let eleDate = document.getElementById('beginDate');
+        if(eleDate) eleDate.max = new Date().toISOString().split("T")[0]; //set maximum date to today
+
+        eleDate = document.getElementById('endDate');
+        if(eleDate) eleDate.max = new Date().toISOString().split("T")[0]; //set maximum date to today
+    </script>
+    <script>
+        const elements = document.getElementsByClassName('redirectURL');
+        
+        for (element of elements) {
+            element.value = window.location.href;
+        }
+    </script>

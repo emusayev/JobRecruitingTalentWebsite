@@ -1,0 +1,101 @@
+body form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.registration-div {
+    margin: .5vh .5vw;
+    display: flex;
+}
+
+.responseDisplay {
+    padding: 0 .2vw;
+    margin: 0;
+    margin-left: 1vw;
+    text-align: center;
+    align-self: center;
+    width: max-content;
+    color: #e5eaecec;
+    display: none;
+    border: inset #e5eaecec .2vh;
+    border-radius: 1vh;
+}
+
+.available {
+    background-color: #276792;
+    display: block;
+}
+
+.unavailable {
+    background-color: rgb(189, 13, 13);
+    display: block;
+    
+}
+
+#register > * {
+    margin: 0 0 .5vw 2vw;
+    /* margin: 0 0 0 0; */
+    /* padding: .5vw; */
+}
+
+#register fieldset {
+    border-radius: .7vw;
+}
+
+#individual-form {
+    display: flex;
+    flex-direction: column;
+}
+
+#org-form {
+    display: none;
+    flex-direction: column;
+}
+
+#individual-form > *, #org-form > * {
+    margin-top: 1vh;
+}
+
+
+#register fieldset > label > input {
+    margin-right: 1vw;
+}
+
+/* #register > fieldset > label {
+    margin-top: .5vh;
+    margin-bottom: .25vh;
+} */
+
+#policy {
+    display: flex;
+    flex-direction: row;
+
+}
+
+#policy > div {
+    display: flex;
+    flex-direction: column;
+}
+
+#policy > div > * {
+    margin: 0 0 1.5vh 0;
+}
+
+#policy > div > input {
+    margin: 0 0vh 2vh 0;
+}
+
+
+#policy div:first-of-type { 
+    padding-right: 1vw;
+}
+
+#register button, #register input[type = 'submit'] {
+    padding: .2%;
+    border: #276792 0.15vw inset;
+    border-radius: .5vw;
+    font-weight: bold;
+    color: #e5eaecec;
+    background-color:  #276792;
+}

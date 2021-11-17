@@ -1,0 +1,68 @@
+<head>
+    <link rel ='stylesheet' href='/public/stylesheets/registration.css'>
+    <script src="/public/javascripts/toggleAccountType.js"></script>
+    <script src="/public/javascripts/availabilityCheck.js"></script>
+</head>
+
+<body>
+    <form id="register" action="/users/registration" method="POST" enctype="application/x-www-form-urlencoded">
+        <button id="account-selector" onclick="toggleAccountType()">Register Your Organization</button>
+        <div class = 'registration-div'>
+            <label>
+                Username:
+                <input type="text" name="username" placeholder="Username" id="username" maxlength="62" required="true">
+            </label>
+            <p id = 'usernameResponseDisplay' class = 'responseDisplay'></p>
+        </div>
+        <div class = 'registration-div'>
+            <label>
+                Email:
+                <input type="email" name="email" placeholder="Email" id="email" maxlength="253" required="true">
+            </label>
+            <p id = 'emailResponseDisplay' class = 'responseDisplay'></p>
+        </div>
+
+        <fieldset>
+            <legend>Password must be atleast 8 characters.</legend>
+            <label>
+                Password:
+                <input type="password" name="password" placeholder="Password" maxlength="128" required="true">
+            </label>
+            <label>
+                Confirm Password:
+            <input type="password" name="confirmPassword" placeholder="Confirm Password" maxlength="128" required="true">
+            </label>
+        </fieldset>
+
+        {{> registration_user }}
+        {{> registration_org }}
+
+
+        <fieldset id='policy'>
+            <legend>By registering you are accepting the following for all future use of this service. </legend>
+            <div>
+                <label>
+                    I accept the usage of cookies when using SkillSeek:
+                </label>
+                <label>
+                    I have read and accept <a href="">the Terms of Service</a> and <a href="">the Privacy Statement</a>:
+                </label>
+            </div>
+            <div>
+                <input type="checkbox" name="cookies" required="true">
+                <input type="checkbox" name="tosps" required="true">
+            </div>
+        </fieldset>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    
+    <script>
+        addEmailListener('emailResponseDisplay', 'email')
+        addUsernameListener('usernameResponseDisplay', 'username')
+
+        let element = document.getElementById('dob')
+        element.max = new Date().toISOString().split("T")[0] //set maximum date to today
+    </script>
+</body>

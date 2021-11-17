@@ -1,0 +1,12 @@
+h3 {
+    text-align: center;
+    background-color: #e5eaecec; 
+    margin-bottom: 15px;
+    border: #e5eaecec 0.15vw inset;
+    border-radius: 0.5vw;
+    margin-right: .15vw;
+    margin-left: .15vw;
+    padding: .2%;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+}
